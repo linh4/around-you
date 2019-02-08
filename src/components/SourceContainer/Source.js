@@ -14,7 +14,7 @@ const Source = (props) => {
       const sources = props.sources.filter(s => s.country === 'us' && s.language === 'en')
       return sources.map(s => <SourceChoice key={s.id} source={s} />)
     } else {
-      return <div>Loading</div>
+      return <div><div className="giphy"><iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/hand-bored-waiting-xTkcEQACH24SMPxIQg"></a></p></div></div>
     }
   }
 
