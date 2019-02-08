@@ -11,7 +11,7 @@ const Source = (props) => {
 
   const renderSources = () => {
     if (props.sources) {
-      const sources = props.sources.filter(s => s.country === 'us')
+      const sources = props.sources.filter(s => s.country === 'us' && s.language === 'en')
       return sources.map(s => <SourceChoice key={s.id} source={s} />)
     } else {
       return <div>Loading</div>
@@ -19,8 +19,7 @@ const Source = (props) => {
   }
 
   return (
-    <div>
-      <h3>hi</h3>
+    <div className="source-box">
       {renderSources()}
     </div>
   )

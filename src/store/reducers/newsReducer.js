@@ -9,6 +9,7 @@ const newsReducer = (state = initialState, action) => {
   switch(action.type){
 
     case "GET_HEADLINES":
+    console.log(action.sources)
       return {...state, headlines: action.sources}
 
     case "GET_SOURCES":

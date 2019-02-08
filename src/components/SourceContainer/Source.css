@@ -1,0 +1,33 @@
+/* ---------- SOURCE ---------- */
+.source-box {
+  padding-top: 50px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-items: center;
+  grid-row-gap: 15px;
+}
+.btn-source {
+  color: #000;
+  padding: 10px 25px;
+  background: #fac152;
+  border: none;
+  box-shadow: 0px 0px 5px #fac152;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 160px;
+  height: 50px;
+  font-size: 0.9em;
+}
+.btn-source:hover {
+  background: transparent;
+  border: 1px solid #fac152;
+  color: #fff;
+}
+
+@media only screen and (max-width: 480px) {
+  .source-box {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}

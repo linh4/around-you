@@ -20,7 +20,7 @@ const Category = (props) => {
   }
 
   return (
-    <div>
+    <div className="category">
       {renderCategory()}
     </div>
   )

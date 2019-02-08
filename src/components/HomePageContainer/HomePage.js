@@ -10,8 +10,8 @@ const HomePage = (props) => {
   }, [])
 
   return (
-    <div>
-      {props.news ? props.news.map((news, idx) => <List key={idx} news={news}/>) : <div>Loading</div>}
+    <div className="head-lines">
+      {props.news ? props.news.map((news, idx) => <List key={idx} news={news}/>) : <div className="giphy"><iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/hand-bored-waiting-xTkcEQACH24SMPxIQg"></a></p></div>}
     </div>
   )
 }

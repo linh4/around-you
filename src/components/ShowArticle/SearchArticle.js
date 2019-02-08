@@ -8,16 +8,18 @@ const SearchArticle = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     let value = e.target.article.value
-    props.searchArticle(value)
-    props.history.push(`/search/${value}`)
-    e.target.article.value = ''
+    if (value !== '') {
+      props.searchArticle(value)
+      props.history.push(`/search/${value}`)
+      e.target.article.value = ''
+    }
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="article" />
-        <input type="submit" value="Search" />
+    <div className="nav-right">
+      <form onSubmit={handleSubmit} id="search-form">
+        <input type="text" name="article" id="search-bar" placeholder="eg: trump..." />
+        <input id="icon" type="image" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png" />
       </form>
     </div>
   )

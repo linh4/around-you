@@ -12,8 +12,9 @@ const Choice = (props) => {
   }
 
   return (
-    <div onClick={pickCategory}>
-      {props.category}
+    <div onClick={pickCategory} className="choice-box">
+      <img src={`/images/${props.category}.jpg`} alt={props.category}/>
+      <p>{props.category}</p>
     </div>
   )
 }

@@ -7,13 +7,13 @@ const SourceChoice = (props) => {
 
   const chooseSource = () => {
     props.pickSource(props.source.id)
-    props.history.push(`/source/${props.source.id}`)
+    props.history.push(`/sources/${props.source.id}`)
   }
 
   return (
-    <div>
-      <p onClick={chooseSource}>{props.source.name}</p>
-    </div>
+    <>
+      <button className="btn-source" onClick={chooseSource}>{props.source.name}</button>
+    </>
   )
 }
 

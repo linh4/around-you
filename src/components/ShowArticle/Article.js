@@ -4,29 +4,33 @@ import { connect } from 'react-redux'
 const Article = (props) => {
 
   const renderArticles = () => {
-    console.log(props.articles)
     if (props.articles) {
-      // debugger
       if (props.articles.length === 0) {
-        return <div>No Result Found</div>
+        return <div className="no-result"><img src="/images/no-result.png" alt="no result found"/></div>
       }
       return props.articles.map(a => (
-        <div key={a.title}>
-          <a href={a.url} target="_blank">
-            {a.urlToImage ? <img src={a.urlToImage} alt={a.title}/> : <img src="https://images.unsplash.com/photo-1497005367839-6e852de72767?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1047&q=80" alt={a.title}/>}
-          </a>
-          <h3>{a.title}</h3>
-          <p>{a.description}</p>
-          {a.author}
-        </div>
+        <>
+          <hr/>
+          <div key={a.title} className="post">
+            <a href={a.url} target="_blank">
+              <div className="news-image">
+                {a.urlToImage ? <img src={a.urlToImage} alt={a.title}/> : <img src="/images/err.jpg" alt={a.title}/>}
+              </div>
+              <div className="content">
+                {a.title ? <h3>{a.title}</h3> : <h3>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</h3>}
+                {a.description ? <p>{a.description}</p> : <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,</p>}
+              </div>
+            </a>
+          </div>
+        </>
       ))
     } else {
-      return <div>Loading</div>
+      return <div class="giphy"><iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/hand-bored-waiting-xTkcEQACH24SMPxIQg"></a></p></div>
     }
   }
 
   return (
-    <div>
+    <div className="head-lines">
       {renderArticles()}
     </div>
   )
